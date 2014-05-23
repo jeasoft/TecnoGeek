@@ -1,0 +1,22 @@
+
+{% block menu %}
+<nav id="menu">
+	<ul>
+       <li><a href="/">Inicio</a></li>
+	   
+	    <li><a href='#'>Movil</a>
+           	<ul>
+			{% for scat in subcategorias %}
+            	<li><a href="{% url "subcategoria" scat.pk %}">{{scat}}</a></li>
+			{% endfor %}
+	        </ul>
+	    </li>
+		
+          {% for cat in categorias %}
+            	<li><a href="{% url "categoria" cat.pk %}">{{cat}}</a></li>
+			{% endfor %}
+       <li><a href="{% url "about" %}">Acerca de</a></li>
+	   <li id="publicar_nav"><a href="{% url "add" %}">Publicar</a></li>
+	</ul>
+</nav>
+{% endblock %}

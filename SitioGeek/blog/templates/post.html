@@ -1,0 +1,27 @@
+{% extends "principal.html"%}
+
+{% block ContenidoPost %}
+		<article class="item">
+		   <h2 class="titulo_item">
+				<a href="">{{post.titulo}}</a>
+			</h2>
+			<figure class="imagen_post" align="center">
+				<img  src="/media/{{ post.imagen }}" class="imagen1" >
+			</figure>
+			
+		   <p class="conte_post">{{post.contenido}}</p>
+
+			<p class="autor_item">
+				Por <a href="#">{{post.usuario}}</a>
+			</p>
+			<p class="datos_item">
+			{% if post.subcategoria %}
+			<a class="tag_item" href="#">{{post.subcategoria}}</a>
+				<span class="fecha_item">Hace <strong>{{post.timestamp|timesince}}</strong></span>
+			{% elif post.categoria %}
+			<a class="tag_item" href="#">{{post.categoria}}</a>
+				<span class="fecha_item">Hace <strong>{{post.timestamp|timesince}}</strong></span>
+			{% endif %}
+			</p>
+		</article>
+{% endblock %}

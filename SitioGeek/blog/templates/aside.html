@@ -1,0 +1,19 @@
+{% block barra_lateral %}
+{% if not request.user.is_authenticated %}
+		<h2>Hola, registrate!</h2>
+		<p>Es importante registrarte</p>
+		<a id="registro" href="#">Registrate aquí</a>
+		<p id="mensaje_registro">En serio, registrate por favor</p>
+		{% else %}
+		<h2>Hola, {{request.user}}</h2>
+		<p>Bienvenido a TecnoGeek!!</p>
+		<a id="registro">Comparte el conocimiento</a>
+		<p id="mensaje_registro">Siguenos!!</p>
+		<ul class="social">
+			<li><img src="/static/social/facebook.png" alt="Facebook" /></li>
+			<li><img src="/static/social/twitter.png" alt="Twitter" /></li>
+			<li><img src="/static/social/google.png" alt="Google" /></li>
+			<li><img src="/static/social/git.png" alt="Github" /></li>
+		</ul>
+		{% endif %}
+{% endblock %}

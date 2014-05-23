@@ -1,0 +1,80 @@
+
+@media screen and (min-width: 768px)
+{
+	body
+	{
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+	#bienvenida
+	{
+		display: block;
+		border-bottom: 1px solid #CCC;
+		float: right;
+		margin-right: 1%;
+		width: 25%;
+	}
+	#bienvenida h2
+	{
+		color: #434343;
+	}
+	#bienvenida #mensaje_registro,
+	#bienvenida #registro
+	{
+		text-align: center;
+	}
+	#bienvenida #mensaje_registro
+	{
+		font-size: 0.8em;
+	}
+	#bienvenida #registro
+	{
+		background: #22BCE0;
+		color: white;
+		display: block;
+		font-size: 1.2em;
+		padding: 0.5em 0;
+	}
+	#bienvenida p{
+		text-align:center;
+		font-weight:bold;
+	}
+	#bienvenida .social li
+	{
+		list-style:none;
+		float:left;
+		margin-right:3px;
+	}
+	#bienvenida .social img
+	{
+		
+		box-shadow: -3px 0px 28px 0px #000;
+		border-radius:20px;
+		padding:0;
+		width: 45px;
+		height: 50px;
+		opacity:0.8;
+	}
+	#bienvenida .social img:hover
+	{
+		 opacity:1;
+	}
+	#contenido
+	{
+		width: 71%;
+	}
+}
+@media screen and (max-width: 480px) {
+
+	*/
+	html {
+		-webkit-text-size-adjust: none;
+	}
+
+	
+	#menu ul a {
+		font-size: 90%;
+		padding: 10px 8px;
+	}
+
+}
