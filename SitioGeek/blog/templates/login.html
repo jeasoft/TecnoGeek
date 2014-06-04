@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>TecnoGEEK</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	{% load static from staticfiles %}
+	<link rel="stylesheet" href="{% static "normalize.css"%}" />
+	<link rel="stylesheet" href="{% static "estilos.css"%}" />
+	<link href="{% static " images/favicon.png"%}" rel="icon" type="images/vnd.microsoft.icon" /> 
+	<link rel="stylesheet" href="{% static "responsive.css"%}" />
+</head>
+<body>
+	<header>
+		<h1 id="titulo_header"><a href="/">TECNOGEEK</a></h1>
+    </header>
+	{% include 'menu.html' %}
+	<section id="contenido">
+	    <form method="post">
+	    <div id="form">
+		<h1>Registrar nuevo usuario</h1>
+		<hr />
+	        {% csrf_token %}
+		    <table>{{formulario}}</table>
+		    <input type="submit" value="Registrar">
+		</div>
+		</form>
+	</section>
+	<footer>
+		<p><strong>Powered by JimRod!</strong> </p>
+		<p>{{frase}}</p>
+		<p><strong>TecnoGeek 2014 ®</strong></p>
+	</footer>
+</body>
+</html>

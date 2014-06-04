@@ -1,0 +1,58 @@
+{% extends "principal.html"%}
+
+
+{% block ContenidoPost%}
+		{% if entrada %}
+
+		{% for post in entrada %}
+		<article class="item">
+			{% if post.imagen %}
+			<figure class="imagen_item">
+				<a href="{% url 'blog.views.post' post.pk %}"><img  src="/media/{{ post.imagen }}" ></a>
+			</figure>
+			{% else %}
+			
+			{% endif %}
+			<h2 class="titulo_item">
+				<a href="{% url 'blog.views.post' post.pk %}">{{post.titulo}}</a>
+			</h2>
+		   <p class="conte">{{post.contenido}}</p>
+			<p class="autor_item">
+				Por <a href="#">{{post.usuario}}</a>
+			</p>
+			<p class="datos_item">
+			{% if post.subcategoria %}
+			<a class="tag_item" href="#">{{post.subcategoria}}</a>
+				<span class="fecha_item">Hace <strong>{{post.timestamp|timesince}}</strong></span>
+			{% elif post.categoria %}
+			<a class="tag_item" href="#">{{post.categoria}}</a>
+				<span class="fecha_item">Hace <strong>{{post.timestamp|timesince}}</strong></span>
+			{% endif %}
+			</p>
+			<p class="votacion">
+				<span>Vota si te gusta </span>
+				<a class="up" href="{% url "plus" post.pk %}"></a>
+				{{post.votos}}
+				<a class="down" href="{% url "minus" post.pk %}"></a>
+				
+			</p>
+		</article>
+		{% endfor %}
+		
+		 <nav class="paginador">
+		 {% if entrada.has_previous %}
+		 
+		 <a href="?page={{ entrada.previous_page_number }}">Página anterior</a>
+		 {% endif %}
+		 <a style="color: #eee;">Página {{ entrada.number}} de {{ entrada.paginator.num_pages}}</a>
+		 {% if entrada.has_next %}
+		 <a href="?page={{ entrada.next_page_number }}">Página Siguiente</a>
+		 
+		 {% endif %}
+		 
+		</nav> 
+		{% else %}
+		    NO HAY ENTRADAS
+		{% endif %}
+		
+{% endblock %}
