@@ -8,15 +8,21 @@
 	font-weight: normal;
 	font-style: normal;
 }
-/* set image max width to 100% */
-img {
-	max-width: 100%;
-	height: auto;
-	width: auto\9; /* ie8 */
-}
 a
 {
 	color: #DD4F24;
+}
+article{
+-webkit-transition-property: box-shadow;
+-webkit-transition-duration: 1s;
+ -webkit-transition-timing-function:ease-in;
+ 
+}
+article:hover
+{
+	-webkit-box-shadow:1px 2px 4px 3px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow:1px 2px 4px 3px rgba(0, 0, 0, 0.4);
+	box-shadow:1px 2px 4px 3px rgba(0, 0, 0, 0.4);
 }
 body
 {
@@ -26,11 +32,11 @@ body
 	font-size: 16px;
 	margin: 0;
 }
-article:hover
-{
-	-webkit-box-shadow:1px 2px 4px 3px rgba(0, 0, 0, 0.4);
-	-moz-box-shadow:1px 2px 4px 3px rgba(0, 0, 0, 0.4);
-	box-shadow:1px 2px 4px 3px rgba(0, 0, 0, 0.4);
+/* set image max width to 100% */
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
 }
 footer
 {
@@ -39,7 +45,7 @@ footer
 	padding: 1em 0;
 	text-align: center;
 	width: 100%;
-	
+
 }
 footer p
 {
@@ -61,13 +67,25 @@ header h1
 {
 	font-size: 22px;
 	font-weight: normal;
-	margin: 1em 20px 1em 35px;
+	margin: 1em 20px 1em 23px;
 	display: block;
 }
 header h1 a
 {
 	text-decoration:none;
 	color:white;
+	
+}
+header #titulo a{
+padding:10px;
+color:#eee;
+-webkit-transition: all 2s ease-in-out;
+}
+
+header #titulo a:hover{
+background-color:#22BCE0;
+color: #1f3b08;
+
 }
 /*************************Fin HEADER******************/
 
@@ -94,19 +112,30 @@ nav ul li
 }
 nav ul li a
 {
+	font-weight:bold;
 	color: white;
 	display: block;
 	padding:7px 4px 7px 4px;
 	/*padding: 0.5em 0;*/
 	margin-left:5px;
+ /* -webkit-transition: all .6s .1s;
+  -moz-transition: all .6s .1s;
+  -o-transition: all .6s .1s;
+  transition: all .6s .1s; */
+  -webkit-transition-property: background;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-property: background;
+  -moz-transition-duration: 1s;
+  -moz-transition-timing-function: ease;
 }
 nav ul li a:hover
 {
-	background-color:#22BCE0;
-	color:white;
-	border-radius:4px;
-	
+ 	background-color:#22BCE0;
+    border-radius:4px; 
 	text-decoration:none;
+
+   /* background: #333; */
 }
 nav > ul > li > ul {
   opacity: 0;
@@ -131,6 +160,7 @@ nav > ul > li:hover > ul {
   opacity: 1;
   top: 30px;
   visibility: visible;
+   
 }
 nav > ul > li > ul:before {
   content: '';
@@ -142,6 +172,7 @@ nav > ul > li > ul:before {
   top: -20px;
   left: 60%;
   margin-left: -42px;
+
 }
 nav > ul > li > ul > li  {
   display: block;

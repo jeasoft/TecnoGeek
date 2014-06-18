@@ -16,7 +16,7 @@
 			<h2 class="titulo_item">
 				<a href="{% url 'blog.views.post' post.pk %}">{{post.titulo}}</a>
 			</h2>
-		   <p class="conte">{{post.contenido}}</p>
+		   <p class="conte">{{post.contenido | escape}}</p>
 			<p class="autor_item">
 				Por <a href="#">{{post.usuario}}</a>
 			</p>

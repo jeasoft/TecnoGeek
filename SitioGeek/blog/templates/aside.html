@@ -8,12 +8,11 @@
 		
 		<h2>Síguenos y comparte</h2>
 		<ul class="social">
-			<img src="/static/social/facebook.png" alt="Facebook" />
-			<img src="/static/social/twitter.png" alt="Twitter" />
-			<img src="/static/social/google.png" alt="Google" />
+			<a href="https://www.facebook.com/yilson13"><img src="/static/social/facebook.png" alt="Facebook" /></a>
+			<a href="https://www.twitter.com/@ingjimrod"><img src="/static/social/twitter.png" alt="Twitter" /></a>
+			<a href=""><img src="/static/social/google.png" alt="Google" /></a>
 			<a href="https://github.com/Yilson/TecnoGeek/"><img src="/static/social/git.png" alt="Github" /></a>
 		</ul>
-		
 		<hr />
 		<h2>Inicia Sessión</h2>
 		<p>Entra haciendo clic debajo</p>
@@ -28,13 +27,13 @@
 		<p id="mensaje_registro">Siguenos!!!</p>
 		
 		<ul class="social">
-			<li><img src="/static/social/facebook.png" alt="Facebook" /></li>
-			<li><img src="/static/social/twitter.png" alt="Twitter" /></li>
-			<li><img src="/static/social/google.png" alt="Google" /></li>
-			<li><a href="https://github.com/Yilson/TecnoGeek/"><img src="/static/social/git.png" alt="Github" /></a></li>
+			<a href="https://www.facebook.com/yilson13"><img src="/static/social/facebook.png" alt="Facebook" /></a>
+			<a href="https://www.twitter.com/@ingjimrod"><img src="/static/social/twitter.png" alt="Twitter" /></a>
+			<a href=""><img src="/static/social/google.png" alt="Google" /></a>
+			<a href="https://github.com/Yilson/TecnoGeek/"><img src="/static/social/git.png" alt="Github" /></a>
 		</ul>
 		
-		<p><a href="{% url "cerrar"  %}">Cerrar Sessión</a></p>
+		<p><a href="{% url "cerrar"  %}" class="salir">Cerrar Sessión</a></p>
 		
 		{% endif %}
 {% endblock %}

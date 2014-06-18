@@ -1,5 +1,7 @@
 # Django settings for SitioGeek project.
 
+#encoding:utf-8
+
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -7,20 +9,20 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('Yilson', 'ing.jimenezr13@gmail.com'),
 )
 
 MANAGERS = ADMINS
 #SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'tecnogeek',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'Tecnogeek',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'root',						#root
-        'PASSWORD': 'yilson',
+        'USER': 'postgres',						#root
+        'PASSWORD': 'yilson13',
         'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '3306',                      # Set to empty string for default. 3306
+        'PORT': '5432',                      # Set to empty string for default. 3306
     }
 }
 
@@ -69,6 +71,7 @@ MEDIA_URL  = '/media/'
 
 import os
 STATIC_ROOT = os.sep.join(os.path.abspath(__file__).split(os.sep)[:-2] + ['static'])
+STATICFILES_STORAGE ='django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -121,6 +124,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+USE_DJANGO_JQUERY = False
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -130,11 +134,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    # 'django.contrib.admindocs',
     'blog',
     'south',
 	'mockups',
     'rest_framework',
+	'tinymce',
+	#'smart_selects',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'

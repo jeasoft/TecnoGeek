@@ -2,6 +2,7 @@ from django.contrib import admin
 from blog.models import Entradas, Categoria,Subcategoria
 from actions import export_as_csv
 
+
 class EntradaAdmin(admin.ModelAdmin):
 	list_display = ('titulo','categoria','subcategoria','votos','usuario','popular')
 	list_filter=('usuario','categoria','subcategoria',)

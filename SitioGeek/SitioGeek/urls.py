@@ -25,6 +25,8 @@ urlpatterns = patterns('',
     url(r'^minus/(\d+)$', 'blog.views.minus', name='minus'),
     url(r'^add/$', 'blog.views.add', name='add'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^tinymce/', include('tinymce.urls')),
+    #url(r'^chaining/', include('smart_selects.urls')),
 )
 
 
