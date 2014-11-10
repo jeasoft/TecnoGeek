@@ -26,7 +26,7 @@ urlpatterns = patterns('',
     url(r'^add/$', 'blog.views.add', name='add'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^tinymce/', include('tinymce.urls')),
-    #url(r'^chaining/', include('smart_selects.urls')),
+    url(r'^chaining/', include('smart_selects.urls')),
 )
 
 
