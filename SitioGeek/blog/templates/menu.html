@@ -24,17 +24,16 @@
 <ul>
        <li><a href="/">Inicio</a></li>
 	   
-	    <li><a href='#'>Movil</a>
+	    {% for categoria in categorias %}
+	    <li><a href='#'>{{ categoria.titulo }}</a>
            	<ul>
-			{% for scat in subcategorias %}
-            	<li><a href="{% url "subcategoria" scat.pk %}">{{scat}}</a></li>
+			{% for subcategoria in categoria.subcategoria_set.all %}
+            	<li><a href="{% url "subcategoria" subcategoria.pk %}">{{ subcategoria.nombre }}</a></li>
 			{% endfor %}
 	        </ul>
 	    </li>
+	    {% endfor %}
 		
-          {% for cat in categorias %}
-            	<li><a href="{% url "categoria" cat.pk %}">{{cat}}</a></li>
-			{% endfor %}
        <li><a href="{% url "about" %}">Acerca de</a></li>
 	   <li id="publicar_nav"><a href="{% url "add" %}">Publicar</a></li>
 	</ul>
